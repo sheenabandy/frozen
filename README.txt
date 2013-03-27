@@ -1,0 +1,1 @@
+Frozen is a project created to test my php and mysql skills. There will be a registration form for users to register, a login form for users to login and an admin page for admins to confirm new users to have access to a members page.
