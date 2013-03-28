@@ -42,5 +42,10 @@
 			<input type="password" name="passwordconfirm" id="passwordconfirm">
 		</td>
 	</tr>
+	<tr>
+		<td colspan="2" align="right">
+			<input type="submit" name="register" id="register" value="Register">
+		<td>
+	</tr>
 	</table>
 </form>
