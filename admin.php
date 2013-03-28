@@ -9,8 +9,10 @@ if(isset(
 	))
 	{
 		$id=$_GET['user'];
-		$member=$_get['member'];
+		$mem=$_GET['member'];
+		if($mem=='1'){
 			mysql_query("update frozen set verified='1' where id='$id'");
+			} else{mysql_query("update frozen set verified='0' where id='$id'");}
 }
 $users = mysql_query("select * from frozen");
 
