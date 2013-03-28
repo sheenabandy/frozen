@@ -18,6 +18,7 @@ if(isset(
 
 				$_SESSION['loggedin']="1";
 				$_SESSION['admin']=$user['admin'];
+				header('location:/frozen/members.php');
 
 				}
 				else {
