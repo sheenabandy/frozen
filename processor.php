@@ -15,11 +15,13 @@ if(isset(
 			while($user = mysql_fetch_array($userinfo)){
 				if($password == $user['password'])
 				{
-
-				$_SESSION['loggedin']="1";
-				$_SESSION['admin']=$user['admin'];
-				header('location:/frozen/members.php');
-
+					if($user['verified'] == "1"){
+						$_SESSION['loggedin']="1";
+						$_SESSION['admin']=$user['admin'];
+						header('location:/frozen/members.php');
+					} else {
+						echo "Please wait for our verification email";
+					}
 				}
 				else {
 				echo "invalid username or password";
