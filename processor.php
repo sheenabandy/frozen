@@ -24,12 +24,12 @@ if(isset(
 					}
 				}
 				else {
-				echo "invalid username or password";
+				echo "invalid username or password. <a href='/frozen/login.php'>Please try again.</a>";
 				}
 			}
 		}
 		else {
-				echo "Invalid username or password";
+				echo "Invalid username or password.  <a href='/frozen/login.php'>Please try again.</a>";
 		}
 	}
 else if(isset(
@@ -43,7 +43,19 @@ else if(isset(
 		$password = htmlentities($_POST['password']);
 		$password = str_replace(array('\'', '"'),'',$password);
 
+		$connect = mysql_connect("localhost","sheenaba","v120b0PtBw");
+		$selectdb = mysql_select_db("sheenaba_frozen") or die();
 
+		$userexist = mysql_query("select * from frozen where username='$username'");
+			if (mysql_num_rows($userexist)==0) {
+
+		$userinsert = mysql_query("insert into frozen (null, '$username', '$email', '$password', '0', '0')");
+		echo "Thank you for your registration. Please wait for our Verification Email.";
+
+			}
+			else {
+			echo "username already exists. <a href='/frozen/register.php'>Please try again.</a>";
+			}
 	}
 else {
 	header('location: /frozen/login.php');
