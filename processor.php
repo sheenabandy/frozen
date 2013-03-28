@@ -4,7 +4,7 @@ if(isset($_POST['submit'])){}
 
 else if(isset($_POST['register'])){}
 
-else {}
+else {header('location: /frozen/login.php');}
 
 
 ?>
