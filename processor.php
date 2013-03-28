@@ -4,7 +4,9 @@ if(isset(
 	$_POST['submit']
 	)){
 		$username = htmlentities($_POST['user']);
+		$username = str_replace(array('\'', '"'),'',$username);
 		$password = htmlentities($_POST['password']);
+		$password = str_replace(array('\'', '"'),'',$password);
 	}
 else if(isset(
 	$_POST['register']
