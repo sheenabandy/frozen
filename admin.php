@@ -10,9 +10,12 @@ if(isset(
 	{
 		$id=$_GET['user'];
 		$mem=$_GET['member'];
-		if($mem=='1'){
-			mysql_query("update frozen set verified='1' where id='$id'");
-			} else{mysql_query("update frozen set verified='0' where id='$id'");}
+
+			mysql_query("update frozen set verified='$mem' where id='$id'");
+			$user = mysql_query("select * from frozen where id='$id'");
+			while($u = mysql_fetch_array($user)){
+		mail($u['email'],"Welcome to Frozen Plains","Congratulations! You've been verified as a member of Frozen Plains./r http://sheenabandy.com/frozen/");
+			}
 }
 $users = mysql_query("select * from frozen");
 
