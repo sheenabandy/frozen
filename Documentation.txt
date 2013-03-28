@@ -1,0 +1,20 @@
+The registration program for Frozen Plains consists of three parts.
+
+Part 1
+From the home page, you can go to either register or login.
+Choosing Login, you enter your username and password and if it matches a current user, you can get in to see the coming soon page.
+
+Part 2
+There is one Admin.
+u: admin
+p: frozen101
+
+If you log in as an admin, you'll see a link to Edit Members.
+On this page, you'll see the list of members and links to verify or unverify the members.
+
+If you verify a member, an email will be sent to the email address telling them that they have been verified.
+
+
+Part 3
+On the registration page, there is a form. When you submit the form, it checks to see if you are using a username that is already in use. If you aren't, it will add you to the database and tell you to wait for the email.
+At this point, the admin would have to log in and verify the user.
