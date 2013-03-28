@@ -43,15 +43,15 @@ else if(isset(
 		$password = htmlentities($_POST['password']);
 		$password = str_replace(array('\'', '"'),'',$password);
 
-		$connect = mysql_connect("localhost","sheenaba","v120b0PtBw");
-		$selectdb = mysql_select_db("sheenaba_frozen") or die();
+		$connectreg = mysql_connect("localhost","sheenaba","v120b0PtBw");
+		$selectdbreg = mysql_select_db("sheenaba_frozen") or die();
 
 		$userexist = mysql_query("select * from frozen where username='$username'");
 			if (mysql_num_rows($userexist)==0) {
-
-		$userinsert = mysql_query("insert into frozen (null, '$username', '$email', '$password', '0', '0')");
+		$userinsert = mysql_query("insert into frozen(username,email,password) values ('$username','$email','$password')");
+		if($userinsert){
 		echo "Thank you for your registration. Please wait for our Verification Email.";
-
+		} else{ echo "Something went wrong.";}
 			}
 			else {
 			echo "username already exists. <a href='/frozen/register.php'>Please try again.</a>";
