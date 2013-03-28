@@ -20,26 +20,10 @@
 	</tr>
 	<tr>
 		<td>
-			Confirm Email:
-		</td>
-		<td>
-			<input type="text" name="emailconfirm" id="emailconfirm">
-		</td>
-	</tr>
-	<tr>
-		<td>
 			Password:
 		</td>
 		<td>
 			<input type="password" name="password" id="password">
-		</td>
-	</tr>
-	<tr>
-		<td>
-			Confirm Password:
-		</td>
-		<td>
-			<input type="password" name="passwordconfirm" id="passwordconfirm">
 		</td>
 	</tr>
 	<tr>
