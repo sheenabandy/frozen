@@ -3,7 +3,7 @@
 if(isset($_SESSION['admin'])){
 
 $users = mysql_query("select * from frozen");
-		if (mysql_num_rows($userinfo)!=0) {
+
 		echo "<table><tr><td>Username</td><td>Email</td><td>Member</td><td>Admin</td></tr>";
 			while($user = mysql_fetch_array($users)){
 			if($user['verified']){$member = "checked";}
@@ -12,7 +12,7 @@ $users = mysql_query("select * from frozen");
 
 			}
 		echo "</table>";
-		}
+
 
 } else {echo "access denied";}
 
