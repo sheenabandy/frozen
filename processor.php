@@ -16,7 +16,8 @@ if(isset(
 				if($password == $user['password'])
 				{
 
-
+				$_SESSION['loggedin']="1";
+				$_SESSION['admin']=$user['admin'];
 
 				}
 				else {
