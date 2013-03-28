@@ -11,11 +11,13 @@ if(isset(
 		$id=$_GET['user'];
 		$mem=$_GET['member'];
 
-			mysql_query("update frozen set verified='$mem' where id='$id'");
+		mysql_query("update frozen set verified='$mem' where id='$id'");
+		if($mem=="1"){
 			$user = mysql_query("select * from frozen where id='$id'");
 			while($u = mysql_fetch_array($user)){
-		mail($u['email'],"Welcome to Frozen Plains","Congratulations! You've been verified as a member of Frozen Plains./r http://sheenabandy.com/frozen/");
-			}
+			mail($u['email'],"Welcome to Frozen Plains","Congratulations! You've been verified as a member of Frozen Plains./r http://sheenabandy.com/frozen/");
+		}
+	}
 }
 $users = mysql_query("select * from frozen");
 
