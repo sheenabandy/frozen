@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 if(isset(
 	$_POST['submit']
@@ -14,7 +15,9 @@ if(isset(
 			while($user = mysql_fetch_array($userinfo)){
 				if($password == $user['password'])
 				{
-				echo "success!";
+
+
+
 				}
 				else {
 				echo "invalid username or password";
